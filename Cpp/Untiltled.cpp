@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 int main(){
-    int input = 0;
-    cout << "Enter input: "; cin >> input;
-    cout << "Input isers " << input << endl;
+    cout << "Hello" << endl;
+    cout << "That's VS Code for you!" << endl;
     return 0;    
 }
