@@ -1,0 +1,4 @@
+ctrl + shift + p
+create java project 
+no build tools
+enter filename
