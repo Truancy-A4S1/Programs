@@ -7,6 +7,6 @@ public class App {
         System.out.println("Hilu Wurld!");
         System.out.println("Hilu Wurld!");
         System.out.println("Hilu Wurld!");
-        System.out.println("Hilu Wurld!");
+        System.out.println("Hilu Wurerrld!");
     }
 }
