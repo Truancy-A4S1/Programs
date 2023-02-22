@@ -35,15 +35,15 @@ elif not is_hot_day:
 else:
     print("It's a wonderful day!")
 
-has_good_credit = True
-downpay = 1000000
+has_good_credit = False
+price = 1000000
+
 if has_good_credit:
-    downpay = (downpay/10) *100
+    downpay = .10 * price
 else:
-    downpay = (downpay/20) *100
+    downpay = .20 * price
 
-print("downpay ", downpay) 
-
+print(f"Downpay: ${downpay}")    
 
 
 
