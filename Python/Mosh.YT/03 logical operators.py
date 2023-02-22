@@ -29,7 +29,7 @@ elif len(name) > 50:
 else:
     print("Name looks good")
 
-
+ 
     
 weight = 57 #int(input("Weight: "))
 kg_or_lb = "k" #input("(L)bs or (K)g: ")
@@ -53,5 +53,5 @@ while attempt <= 3:
     attempt = attempt + 1
 
 else:
-    print("You lose!")
+    print("You lose haha!")
 

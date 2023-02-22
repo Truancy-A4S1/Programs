@@ -43,7 +43,7 @@ if has_good_credit:
 else:
     downpay = .20 * price
 
-print(f"Downpay: ${downpay}")    
+print(f"Downpay: ${downpay}.")    
 
 
 
