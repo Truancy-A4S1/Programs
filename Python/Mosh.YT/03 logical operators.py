@@ -53,5 +53,5 @@ while attempt <= 3:
     attempt = attempt + 1
 
 else:
-    print("You lose haha!")
+    print("You lose haha!ff")
 
