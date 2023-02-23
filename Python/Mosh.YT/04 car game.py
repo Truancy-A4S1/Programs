@@ -1,6 +1,6 @@
 want_to_quit = False
-command = "Initial"
-prev_state = "Initial"
+command = "Init"
+prev_state = "Init"
 
 while want_to_quit == False:
     command = input(" >")
@@ -27,6 +27,6 @@ while want_to_quit == False:
         want_to_quit = True
 
     else:
-        print("I don't understand that....")
+        print("I don't understand that...")
 
     prev_state = command
