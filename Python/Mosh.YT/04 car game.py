@@ -27,6 +27,6 @@ while want_to_quit == False:
         want_to_quit = True
 
     else:
-        print("I don't understand that...")
+        print("I don't understand that....")
 
     prev_state = command
