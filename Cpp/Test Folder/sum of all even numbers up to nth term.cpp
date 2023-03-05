@@ -16,7 +16,7 @@ int sum_of_even_numbers(int inn){
 int main(){
     int in;
     cout << "Input number of terms: ";
-    cin >> in;  
+    cin >> in;
 
     cout << "Sum of even numbers up to " << in << "th term: " << sum_of_even_numbers(in) << endl;
     return 0;
