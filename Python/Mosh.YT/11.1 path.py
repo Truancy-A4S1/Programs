@@ -7,8 +7,8 @@ from pathlib import Path #Path is an object
 path = Path("D:\Programs\Python\Mosh.YT\ecommerce")
 print(path.exists()) #check if path exists
 
-path1 = Path("D:\Programs\Python\Mosh.Yt\email")
-#print(path1.mkdir()) #crate a directory
+path1 = Path("test email")
+print(path1.mkdir()) #crate a directory
 
 #print(path1.rmdir()) #remove a directory
 
