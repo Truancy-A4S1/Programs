@@ -1,3 +1,5 @@
+# TDL: Specify the directory and automatically add the .jpg, .png, etc... to the image list
+
 from tkinter import *
 from PIL import ImageTk, Image
 
