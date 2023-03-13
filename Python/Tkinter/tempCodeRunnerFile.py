@@ -1,1 +1,1 @@
-resize
+pack

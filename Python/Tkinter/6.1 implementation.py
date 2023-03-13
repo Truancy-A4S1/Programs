@@ -20,7 +20,7 @@ frame_quiz = LabelFrame(root, text="Quiz", pady=5, padx=5)
 frame_quiz.grid(row=0, column=1, pady=10, padx=10)
 
 frame_image = LabelFrame(root, text="Image Viewer", pady=5, padx=5)
-frame_image.grid(row=1, column=0, columnspan=2, pady=10, padx=10)
+frame_image.grid(row=1, column=0, pady=10, padx=10)
 
                     # Calculator
 # Function
@@ -105,19 +105,83 @@ bClear.grid(row=4,column=3)
 
 
 # Image Viewer
-Label(frame_image, text="coming soon..").pack()
-
+viewer_win_caption = Label(frame_image, text="coming soon..")
+viewer_win_caption.pack()
 # TDL: choose a path -> get the files in that direcory -> create an image objects directed at each image path
-
 # img_path = Path("D:\Programs\Python\Image.res")
 # Make a LIST of .png files
 # for filenames_from_file in img_path.glob("*.png"):
 #    print(filenames_from_file)
 
+# Image objects added to the list
+img1 = ImageTk.PhotoImage(Image.open('D:/Programs/Python/Image.res/01.png').resize((265,265)))
+img2 = ImageTk.PhotoImage(Image.open('D:/Programs/Python/Image.res/02.png').resize((265,265)))
+img3 = ImageTk.PhotoImage(Image.open('D:/Programs/Python/Image.res/03.png').resize((265,265)))
+img4 = ImageTk.PhotoImage(Image.open('D:/Programs/Python/Image.res/04.png').resize((265,265)))
+image_list = [img1, img2, img3, img4]
+
+# initial image 
+img_label = Label(viewer_win_caption, image=img1)
+img_label.grid(row=1, column=0, columnspan=3)
+
+#functions
+def img_next(img_num):
+    global img_label
+    global bNext
+    global bPrev
+    global bExit
+
+    img_label.grid_forget()
+    img_label = Label(viewer_win_caption, image=image_list[img_num])
+    
+    img_label.grid(row=1, column=0, columnspan=3)
+
+    # Buttons (Prev is disabled because the first image is already being displayed)
+    bNext = Button(viewer_win_caption, font=MonoFont, text="Next", command=lambda: img_next(img_num+1))
+    bExit = Button(viewer_win_caption, font=MonoFont, text="Exit", command=root.quit)
+    bPrev = Button(viewer_win_caption, font=MonoFont, text="Prev", command=lambda: img_prev(img_num-1))
+
+    if(len(image_list) == img_num+1):
+        bNext = Button(viewer_win_caption, font=MonoFont, text="Next", state=DISABLED)
+
+    # Button positions
+    bPrev.grid(row=2, column=0, padx=10, pady=5)
+    bExit.grid(row=2, column=1, padx=10, pady=5)
+    bNext.grid(row=2, column=2, padx=10, pady=5)
+
+def img_prev(img_num):
+    global img_label
+    global bNext
+    global bPrev
+    global bExit
+
+    img_label.grid_forget()
+    img_label = Label(viewer_win_caption, image=image_list[img_num])
+    img_label.grid(row=1, column=0, columnspan=3)
+
+    # Buttons (Prev is disabled because the first image is already being displayed)
+    bNext = Button(viewer_win_caption, font=MonoFont, text="Next", command=lambda: img_next(img_num+1))
+    bExit = Button(viewer_win_caption, font=MonoFont, text="Exit", command=root.quit)
+    bPrev = Button(viewer_win_caption, font=MonoFont, text="Prev", command=lambda: img_prev(img_num-1))
+
+    if(img_num == 0):
+        bPrev = Button(viewer_win_caption, font=MonoFont, text="Prev", state=DISABLED)
+
+    # Button positions
+    bPrev.grid(row=2, column=0, padx=10, pady=5)
+    bExit.grid(row=2, column=1, padx=10, pady=5)
+    bNext.grid(row=2, column=2, padx=10, pady=5)
 
 
+# Buttons (Prev is disabled because the first image is already being displayed)
+bNext = Button(viewer_win_caption, font=MonoFont, text="Next", command=lambda: img_next(2))
+bExit = Button(viewer_win_caption, font=MonoFont, text="Exit", command=root.quit)
+bPrev = Button(viewer_win_caption, font=MonoFont, text="Prev", state=DISABLED)
 
-
+# Button positions
+bPrev.grid(row=2, column=0, padx=10, pady=5)
+bExit.grid(row=2, column=1, padx=10, pady=5)
+bNext.grid(row=2, column=2, padx=10, pady=5)
 
 
 # Quiz
